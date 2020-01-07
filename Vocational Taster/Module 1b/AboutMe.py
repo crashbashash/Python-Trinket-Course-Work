@@ -49,6 +49,12 @@ o____
  ||||
     ''')
     input("\nHit ENTER/RETURN to continue...")
+
+    print('Here is some odd pattern')
+    print(f'{"x-"*10}\n{"-o"*10}')
+
+    input("\nHit ENTER/RETURN to continue...")
+
     break
   except Exception as e: ##Detect if the user gives a non number
     print("Incorrect input given, hit ENTER/RETURN to continue...")
