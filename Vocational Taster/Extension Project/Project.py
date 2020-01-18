@@ -1,8 +1,8 @@
 #!/bin/python3
 
-import os
-from operator import itemgetter
-from typing import List, Dict
+import os ##Import os to send cmd commands
+from operator import itemgetter ##Import item getter to sort dicts by specific items
+from typing import List, Dict ##Import typing for type hinting stuff
 
 def ClearScreen(): ##Clear screen function
     os.system("cls" if os.name == "nt" else "clear")
@@ -10,12 +10,12 @@ def ClearScreen(): ##Clear screen function
 
 print("Ashleys super awesome name calculator thingy: \n")
 
-personsList: List[dict] = []
+personsList: List[dict] = [] ##Instantiate a list containing info on people the user inputs
 
 while True: ##Main program loop
     while True: ##Main loop to add names
         ##Instantiate the person dictionary
-        person = {
+        person: Dict = {
             'name':'',
             'age':0,
             'height':0.0
@@ -77,7 +77,7 @@ while True: ##Main program loop
                 input("\nPlease input either 'Y' or 'N'!!!\nPlease hit ENTER/RETURN to continue...")
                 continue
 
-    if len(personsList) > 1:
+    if len(personsList) > 1: ##Check if the user has inputted more than 1 person into the list
         personsList.sort(key=itemgetter("height")) ##Sort the main list by height
         personsListAgeSort = personsList ##Set the age list to the persons list
         personsListAgeSort.sort(key=itemgetter("age")) ##Sort this list by age
@@ -94,6 +94,7 @@ while True: ##Main program loop
         shortestPerson: str = personsList[0]['name'] ##Set shortest person variable
         shortestValue: int = personsList[0]['height'] ##Set shortest value variable
 
+        ##Print information about the people in the persons list
         print(
         f"""
         {oldestPerson} is the oldest person at {oldestAge}
@@ -103,6 +104,6 @@ while True: ##Main program loop
         """
         )
         break
-    else:
+    else: ##If not get them to enter more people into the list
         input("\nPlease enter more than 1 person in the list!!!\nHit ENTER/RETURN to continue...")
-        continue
+        continue ##Continue the main loop to get the user to input more people into the list
