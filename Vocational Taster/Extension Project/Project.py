@@ -107,3 +107,4 @@ while True: ##Main program loop
     else: ##If not get them to enter more people into the list
         input("\nPlease enter more than 1 person in the list!!!\nHit ENTER/RETURN to continue...")
         continue ##Continue the main loop to get the user to input more people into the list
+
