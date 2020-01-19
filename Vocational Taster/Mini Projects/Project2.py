@@ -11,7 +11,7 @@ def EncryptText(text: str, key: int) -> str: ##Function to encrypt text
             newChr = ord(char) + key ##Add the key to the ord of the char
             while True: ##Loop till newChr is below 122
                 if newChr > 122: ##Loop new chr back to 97 if it's above 122
-                    newChr = 97 + abs(newChr-122)
+                    newChr = 65 + abs(newChr-122)
                 else: ##If it's below 122 then end the loop
                     break
             
@@ -39,4 +39,4 @@ while True: ##User choose key loop
 
 
 print(f"Original Message: {message}")
-print(f"Encrypted Message: {EncryptText(message.lower(), key)}")
+print(f"Encrypted Message: {EncryptText(message, key)}")
